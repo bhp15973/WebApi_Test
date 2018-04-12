@@ -4,8 +4,8 @@ EXPOSE 80
 
 FROM microsoft/aspnetcore-build:2.0 AS build
 WORKDIR /src
-COPY WebApplication.sln ./
-COPY WebApplication/WebApplication.csproj WebApplication/
+COPY ../WebApplication.sln ./
+COPY WebApplication.csproj WebApplication/
 RUN dotnet restore -nowarn:msb3202,nu1503
 COPY . .
 WORKDIR /src/WebApplication
